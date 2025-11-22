@@ -72,6 +72,7 @@ This project follows a standard **MVC (Model-View-Controller)** pattern adapted 
 ## API Endpoints Reference
 
 | **Method** | **Endpoint** | **Description** | **Request Body** | **Response (Success)** |
+|:----------:|:------------:|:---------------:|:----------------:|:----------------------:|
 | `GET` | `/todos` | Retrieve all tasks | N/A | `200 OK` JSON list |
 | `POST` | `/todos` | Create a new task | `{"task": "Buy milk"}` | `201 Created` JSON object |
 | `DELETE` | `/todos/<id>` | Delete a task | N/A | `200 OK` Success message |
