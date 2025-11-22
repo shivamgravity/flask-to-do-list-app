@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=""UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>Flask To-Do App</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>My To-Do List</h1>
+
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Enter a new task...">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <ul id="taskList">
+                <!--all the tasks will appear here -->
+            </ul>
+        </div>
+
+        <script>
+            const API_URL = '/todos';
+
+            // fetch and display tasks
+            async function loadTasks() {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+                const list = document.getElementById('taskList');
+                list.innerHTML = '';
+
+                data.todos.forEach(todo => {
+                    const li = document.createElement('li');
+                    li.id = `task-${todo.id}`;
+                    li.innerHTML = `
+                        <span>${todo.task}</span>
+                        <button class="delete-btn" onclick="deleteTask(${todo.id})"><span class="red-cross">&#x2716;</span></button>
+                    `;
+                    list.appendChild(li);
+                });
+            }
+
+            // add a new task
+            async function addTask() {
+                const input = document.getElementById('taskInput');
+                const task = input.value;
+                if (!task) return alert("Please enter a task!");
+
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({task: task})
+                });
+
+                input.value = ''; // the is clear input
+                loadTasks(); // this is to refresh the task list
+            }
+
+            // to delete a task
+            async function deleteTask(id) {
+                await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+                loadTasks(); // refreshes the list
+            }
+
+            // load the tasks when page opens
+            loadTasks();
+        </script>
+    </body>
+</html>
