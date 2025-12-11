@@ -7,12 +7,11 @@ This project implements a full-stack RESTful API and a dynamic frontend using th
 The goal of this project is to create a robust task management system that bridges a Python backend with a responsive HTML/JavaScript frontend.
 
 **Key Features:**
-
-    * **RESTful API:** Backend endpoints to `GET`,`POST`, and `DELETE` tasks, adhering to standard REST principles.
-    * **Interactive Frontend:** A responsive HTML/CSS/JS interface that allows users to add and remove tasks dynamically without page reloads.
-    * **Real-time DOM Manipulation:** The UI updates instantly using vanilla JavaScript `fetch()` calls.
-    * **Input Validation:** Server-side checks to ensure data integrity and prevents empty task submissions.
-    * **MVC Architecture:** clear separation of concersn between Data (Model), UI (View), and Logic (Controller).
+* **RESTful API:** Backend endpoints to `GET`,`POST`, and `DELETE` tasks, adhering to standard REST principles.
+* **Interactive Frontend:** A responsive HTML/CSS/JS interface that allows users to add and remove tasks dynamically without page reloads.
+* **Real-time DOM Manipulation:** The UI updates instantly using vanilla JavaScript `fetch()` calls.
+* **Input Validation:** Server-side checks to ensure data integrity and prevents empty task submissions.
+* **MVC Architecture:** clear separation of concersn between Data (Model), UI (View), and Logic (Controller).
 
 ## Prerequisites
 
