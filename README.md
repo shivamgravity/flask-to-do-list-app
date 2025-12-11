@@ -47,7 +47,7 @@ The goal of this project is to create a robust task management system that bridg
     ```bash
     python app.py
     ```
-    *The server will start at `http://127.0.0.1:5000`
+    *The server will start at `http://127.0.0.1:5000`*
 2. **Access the Application:** Open your web browser and go to `http://127.0.0.1:5000`.
 3. **Use the App:**
     * **Add Task:** Type a task name and press "Enter" or click the "Add Task" button.
