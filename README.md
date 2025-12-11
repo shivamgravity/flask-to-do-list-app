@@ -98,4 +98,4 @@ To scale this application for production, the following enhancements are planned
 
 1. **Persistent Storage:** Replace the in-memory list with a persistent database like **SQLite** or **PostgreSQL** using SQLAlchemy.
 2. **User Authentication:** Implement login/signup functionality to allow users to manage their own private task lists.
-3. **Task Status:** Add a feature to mark tasks s "Completed" (toggle done/undone) instead of just deleting them.
+3. **Task Status:** Add a feature to mark tasks like "Completed" (toggle done/undone) instead of just deleting them.
